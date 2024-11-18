@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+#define f(x,y) ((y-x)/(y+x))
+
+int main()
+{
+    printf("Input initial y0 and x0.\n");
+    float y0,x0;   
+    scanf("%f %f",&y0,&x0);
+    printf("Input value of x.\n");
+    float x;
+    scanf("%f",&x);
+    printf("Input number of steps.\n");
+    int n;
+    scanf("%d",&n);
+    float h = (x-x0)/n;
+    printf("X   Y\n");
+    for(int i = 0;i < n;i++)
+    {
+        y0 = y0 + h*f(x0,y0);
+        x0 = x0+h;
+        printf("%f  %f\n",x0,y0);
+    }
+
+}
